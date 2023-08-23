@@ -10,7 +10,7 @@ import {
 
 const appSettings = {
   databaseURL:
-    "https://to-do-list-app-1e2df-default-rtdb.asia-southeast1.firebasedatabase.app/",
+    "https://todo-app-13aa9-default-rtdb.asia-southeast1.firebasedatabase.app/",
 };
 
 const app = initializeApp(appSettings);
@@ -41,7 +41,7 @@ onValue(todoListInDB, function (snapshot) {
       appendItemToDoListEl(currentItem);
     }
   } else {
-    todoListEl.innerHTML = "Start Your Plan ...";
+    todoListEl.innerHTML = "Start 🧘‍♂️ Your Plan ...";
   }
 });
 
@@ -68,7 +68,7 @@ function appendItemToDoListEl(item) {
 
   document
     .getElementById("list-container")
-    ?.addEventListener("click", function () {
+    .addEventListener("click", function () {
       let exactLocationOfItemInDB = ref(database, `todolist/${itemID}`);
 
       remove(exactLocationOfItemInDB);

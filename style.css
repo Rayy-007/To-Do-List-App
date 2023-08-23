@@ -44,7 +44,21 @@ button {
   font-size: 18px;
   border-radius: 5px;
   color: var(--primary-color);
+  cursor: pointer;
+  transition: 0.3s ease;
 }
+
+button:hover {
+  transform: scale(1.04);
+}
+
+button:active {
+  transform: scale(1);
+}
+
+/* ==============
+    To do Lists
+    ============= */
 .todo-lists {
   width: 95%;
   margin: 0 auto;
@@ -68,6 +82,8 @@ button {
   left: 15%;
 
   padding: 20px 10px;
+
+  cursor: pointer;
 }
 .list-container::before {
   content: "";
