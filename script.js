@@ -57,8 +57,6 @@ function appendItemToDoListEl(item) {
   let itemID = item[0];
   let itemValue = item[1];
 
-  //  newEl.textContent = itemValue;
-
   todoListEl.innerHTML += `
   <div class="list-container" id="list-container">
     <div class="todo">
@@ -75,6 +73,4 @@ function appendItemToDoListEl(item) {
 
       remove(exactLocationOfItemInDB);
     });
-
-  //shoppingListEl.append(newEl);
 }
