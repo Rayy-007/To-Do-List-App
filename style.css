@@ -1,0 +1,114 @@
+@import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@10..48,400;10..48,600;10..48,800&family=Poppins:wght@400;600;900&display=swap");
+
+:root {
+  --primary-color: #fff;
+  --tile-font: "Bricolage Grotesque", sans-serif;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  list-style: none;
+  border: none;
+  outline: none;
+
+  font-family: "Poppins", sans-serif;
+}
+body {
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: 490px;
+  margin: 0 auto;
+}
+
+.add-form {
+  margin: 30px auto 30px auto;
+  max-width: 480px;
+  display: flex;
+  flex-direction: column;
+}
+input {
+  /* max-width: 300px; */
+  padding: 25px 20px;
+  font-size: 16px;
+  background-color: #c7e8da;
+  margin-bottom: 10px;
+  line-height: 1.5;
+  color: #000;
+}
+button {
+  padding: 10px 15px;
+  background-color: rgb(0, 137, 121);
+  font-size: 18px;
+  border-radius: 5px;
+  color: var(--primary-color);
+}
+.todo-lists {
+  width: 95%;
+  margin: 0 auto;
+
+  position: relative;
+
+  /* border: 1px solid #000; */
+}
+
+.todo-lists::before {
+  position: absolute;
+  content: "";
+  left: 10%;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+
+  background-color: #0eb3bc;
+}
+
+.list-container {
+  max-width: 380px;
+  position: relative;
+  left: 15%;
+
+  padding: 20px 10px;
+  /* border: 1px solid red; */
+}
+.list-container::before {
+  content: "";
+  position: absolute;
+  width: 35px;
+  border-radius: 50%;
+  height: 35px;
+  background-image: url("img/fitness.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: #0eb3bc;
+  left: -40px;
+}
+
+.list-container:nth-child(2)::before {
+  background-image: url("img/christmas-dinner.png");
+}
+
+.todo {
+  padding: 5px 10px 19px 10px;
+  border-bottom: 0.2px solid rgba(0, 0, 0, 0.12);
+}
+
+.todo .todo--title {
+  font-family: var(--tile-font);
+  font-size: 22px;
+  line-height: 1.3;
+  font-weight: 800;
+  word-spacing: 2px;
+  letter-spacing: 1.4px;
+  color: rgb(38, 148, 244);
+}
+.todo .todo--para {
+  font-size: 14px;
+  margin-top: 8px;
+  margin-left: 8px;
+  color: #423e3e;
+  font-weight: 400;
+}
