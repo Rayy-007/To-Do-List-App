@@ -57,21 +57,21 @@ function appendItemToDoListEl(item) {
   let itemID = item[0];
   let itemValue = item[1];
 
-  todoListEl.innerHTML += `
-  <div class="list-container" id='list-${itemID}'>
-    <div class="todo">
-        <h4 class="todo--title">${itemValue}</h4>
-        <p class="todo--para">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nesciunt, deleniti.</p>
-    </div>
-</div>
-`;
+  const todoConEl = document.createElement("div");
+  todoConEl.className = "list-container";
 
-  document
-    .getElementById("list-" + itemID)
-    .addEventListener("click", function () {
-      let exactLocationOfItemInDB = ref(database, `todolist/${itemID}`);
-      console.log("click", itemID);
+  todoConEl.innerHTML += `
+      <div class="todo">
+          <h4 class="todo--title">${itemValue}</h4>
+          <p class="todo--para">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nesciunt, deleniti.</p>
+      </div>
+  `;
 
-      remove(exactLocationOfItemInDB);
-    });
+  todoConEl.addEventListener("click", function () {
+    let exactLocationOfItemInDB = ref(database, `todolist/${itemID}`);
+    console.log("click", itemID);
+
+    remove(exactLocationOfItemInDB);
+  });
+  todoListEl.append(todoConEl);
 }
