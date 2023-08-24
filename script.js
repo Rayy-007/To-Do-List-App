@@ -58,7 +58,7 @@ function appendItemToDoListEl(item) {
   let itemValue = item[1];
 
   todoListEl.innerHTML += `
-  <div class="list-container" id="list-container">
+  <div class="list-container" id='list-${itemID}'>
     <div class="todo">
         <h4 class="todo--title">${itemValue}</h4>
         <p class="todo--para">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nesciunt, deleniti.</p>
@@ -67,9 +67,10 @@ function appendItemToDoListEl(item) {
 `;
 
   document
-    .getElementById("list-container")
+    .getElementById("list-" + itemID)
     .addEventListener("click", function () {
       let exactLocationOfItemInDB = ref(database, `todolist/${itemID}`);
+      console.log("click", itemID);
 
       remove(exactLocationOfItemInDB);
     });
