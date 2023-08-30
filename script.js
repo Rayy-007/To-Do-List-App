@@ -13,6 +13,7 @@ const appSettings = {
     "https://todo-app-13aa9-default-rtdb.asia-southeast1.firebasedatabase.app/",
 };
 
+// Setting Up the Firebase Dtabase
 const app = initializeApp(appSettings);
 const database = getDatabase(app);
 const todoListInDB = ref(database, "todolist");
@@ -21,6 +22,7 @@ const inputEl = document.getElementById("input-el");
 const addBtn = document.getElementById("add-btn");
 const todoListEl = document.getElementById("todo-lists");
 
+// if the add button is clicked, the data of the form will be push to the database object
 addBtn.addEventListener("click", function () {
   let inputValue = inputEl.value;
 
@@ -29,6 +31,7 @@ addBtn.addEventListener("click", function () {
   clearInputFieldEl();
 });
 
+// getting the data from the firebase database
 onValue(todoListInDB, function (snapshot) {
   if (snapshot.exists()) {
     let itemsArray = Object.entries(snapshot.val());
@@ -53,6 +56,7 @@ function clearInputFieldEl() {
   inputEl.value = "";
 }
 
+//  Render the data of firebase
 function appendItemToDoListEl(item) {
   let itemID = item[0];
   let itemValue = item[1];
