@@ -44,7 +44,7 @@ onValue(todoListInDB, function (snapshot) {
       appendItemToDoListEl(currentItem);
     }
   } else {
-    todoListEl.innerHTML = "Start 🧘‍♂️ Your Plan ...";
+    todoListEl.innerHTML = "Start   🧘‍♂️ Your Plan ...";
   }
 });
 
